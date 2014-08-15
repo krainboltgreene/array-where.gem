@@ -1,19 +1,33 @@
-blankgem
---------
+array-where
+-----------
 
-  - [![Version](https://badge.fury.io/rb/blankgem.png)](https://rubygems.org/gems/blankgem)
-  - [![Climate](https://codeclimate.com/github/krainboltgreene/blankgem.png)](https://codeclimate.com/github/krainboltgreene/blankgem)
-  - [![Build](http://img.shields.io/travis-ci/krainboltgreene/blankgem.png)](https://travis-ci.org/krainboltgreene/blankgem)
-  - [![Dependencies](https://gemnasium.com/krainboltgreene/blankgem.png)](https://gemnasium.com/krainboltgreene/blankgem)
+  - [![Version](https://badge.fury.io/rb/array-where.png)](https://rubygems.org/gems/array-where)
+  - [![Climate](https://codeclimate.com/github/krainboltgreene/array-where.png)](https://codeclimate.com/github/krainboltgreene/array-where)
+  - [![Build](http://img.shields.io/travis-ci/krainboltgreene/array-where.png)](https://travis-ci.org/krainboltgreene/array-where)
+  - [![Dependencies](https://gemnasium.com/krainboltgreene/array-where.png)](https://gemnasium.com/krainboltgreene/array-where)
   - [![License](http://img.shields.io/license/MIT.png?color=green)](http://opensource.org/licenses/MIT)
 
-TODO: Write a gem description
+Query your arrays for matches.
 
 
 Using
 =====
 
-TODO: Write usage instructions here
+``` ruby
+require "ostruct"
+require "array/where"
+
+eve = OpenStruct.new(name: "Eve", age: 21)
+john = OpenStruct.new(name: "John", age: 21)
+james = OpenStruct.new(name: "James", age: 22)
+
+friends = [eve, john, james]
+friends.where(age: 21) #=> [eve, john]
+friends.where(name: "John", age: 21) #=> [john]
+friends.where(age: 0) #=> []
+
+friends.wherein(name: ->(name) { name.include?("J") }) #=> [john, james]
+```
 
 
 Installing
@@ -21,7 +35,7 @@ Installing
 
 Add this line to your application's Gemfile:
 
-    gem "blankgem", "~> 1.0"
+    gem "array-where", "~> 1.0"
 
 And then execute:
 
@@ -29,7 +43,7 @@ And then execute:
 
 Or install it yourself with:
 
-    $ gem install blankgem
+    $ gem install array-where
 
 
 Contributing

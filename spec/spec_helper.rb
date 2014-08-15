@@ -1,3 +1,4 @@
 require "pry"
 require "rspec"
-require "blankgem"
+require "array-where"
+require "ostruct"
