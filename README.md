@@ -2,9 +2,9 @@ array-where
 -----------
 
   - [![Version](https://badge.fury.io/rb/array-where.png)](https://rubygems.org/gems/array-where)
-  - [![Climate](https://codeclimate.com/github/krainboltgreene/array-where.png)](https://codeclimate.com/github/krainboltgreene/array-where)
-  - [![Build](http://img.shields.io/travis-ci/krainboltgreene/array-where.png)](https://travis-ci.org/krainboltgreene/array-where)
-  - [![Dependencies](https://gemnasium.com/krainboltgreene/array-where.png)](https://gemnasium.com/krainboltgreene/array-where)
+  - [![Climate](https://codeclimate.com/github/krainboltgreene/array-where.gem.png)](https://codeclimate.com/github/krainboltgreene/array-where.gem)
+  - [![Build](http://img.shields.io/travis-ci/krainboltgreene/array-where.gem.png)](https://travis-ci.org/krainboltgreene/array-where.gem)
+  - [![Dependencies](https://gemnasium.com/krainboltgreene/array-where.gem.png)](https://gemnasium.com/krainboltgreene/array-where.gem)
   - [![License](http://img.shields.io/license/MIT.png?color=green)](http://opensource.org/licenses/MIT)
 
 Query your arrays for matches.
