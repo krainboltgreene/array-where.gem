@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Array-where.gem by krainboltgreene</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Array-where.gem</h1>
+        <p>Query your arrays.</p>
+
+        <p class="view"><a href="https://github.com/krainboltgreene/array-where.gem">View the Project on GitHub <small>krainboltgreene/array-where.gem</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/krainboltgreene/array-where.gem/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/krainboltgreene/array-where.gem/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/krainboltgreene/array-where.gem">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <ul>
+<li><a href="https://rubygems.org/gems/array-where"><img src="https://badge.fury.io/rb/array-where.png" alt="Version"></a></li>
+<li><a href="https://codeclimate.com/github/krainboltgreene/array-where.gem"><img src="https://codeclimate.com/github/krainboltgreene/array-where.gem.png" alt="Climate"></a></li>
+<li><a href="https://travis-ci.org/krainboltgreene/array-where.gem"><img src="http://img.shields.io/travis-ci/krainboltgreene/array-where.gem.png" alt="Build"></a></li>
+<li><a href="https://gemnasium.com/krainboltgreene/array-where.gem"><img src="https://gemnasium.com/krainboltgreene/array-where.gem.png" alt="Dependencies"></a></li>
+<li><a href="http://opensource.org/licenses/MIT"><img src="http://img.shields.io/license/MIT.png?color=green" alt="License"></a></li>
+</ul>
+
+<p>Query your arrays for matches.</p>
+
+<h1>
+<a id="using" class="anchor" href="#using" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using</h1>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">"</span>ostruct<span class="pl-pds">"</span></span>
+<span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">"</span>array/where<span class="pl-pds">"</span></span>
+
+eve <span class="pl-k">=</span> <span class="pl-c1">OpenStruct</span>.<span class="pl-k">new</span>(<span class="pl-c1">name:</span> <span class="pl-s"><span class="pl-pds">"</span>Eve<span class="pl-pds">"</span></span>, <span class="pl-c1">age:</span> <span class="pl-c1">21</span>)
+john <span class="pl-k">=</span> <span class="pl-c1">OpenStruct</span>.<span class="pl-k">new</span>(<span class="pl-c1">name:</span> <span class="pl-s"><span class="pl-pds">"</span>John<span class="pl-pds">"</span></span>, <span class="pl-c1">age:</span> <span class="pl-c1">21</span>)
+james <span class="pl-k">=</span> <span class="pl-c1">OpenStruct</span>.<span class="pl-k">new</span>(<span class="pl-c1">name:</span> <span class="pl-s"><span class="pl-pds">"</span>James<span class="pl-pds">"</span></span>, <span class="pl-c1">age:</span> <span class="pl-c1">22</span>)
+
+friends <span class="pl-k">=</span> [eve, john, james]
+friends.where(<span class="pl-c1">age:</span> <span class="pl-c1">21</span>) <span class="pl-c">#=&gt; [eve, john]</span>
+friends.where(<span class="pl-c1">name:</span> <span class="pl-s"><span class="pl-pds">"</span>John<span class="pl-pds">"</span></span>, <span class="pl-c1">age:</span> <span class="pl-c1">21</span>) <span class="pl-c">#=&gt; [john]</span>
+friends.where(<span class="pl-c1">age:</span> <span class="pl-c1">0</span>) <span class="pl-c">#=&gt; []</span>
+
+friends.wherein(<span class="pl-c1">name:</span> <span class="pl-k">-</span><span class="pl-k">&gt;</span>(name) { name.include?(<span class="pl-s"><span class="pl-pds">"</span>J<span class="pl-pds">"</span></span>) }) <span class="pl-c">#=&gt; [john, james]</span></pre></div>
+
+<h1>
+<a id="installing" class="anchor" href="#installing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing</h1>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<pre><code>gem "array-where", "~&gt; 1.0"
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself with:</p>
+
+<pre><code>$ gem install array-where
+</code></pre>
+
+<h1>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h1>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol>
+
+<h1>
+<a id="licensing" class="anchor" href="#licensing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Licensing</h1>
+
+<p>Copyright (c) 2013 Kurtis Rainbolt-Greene</p>
+
+<p>MIT License</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/krainboltgreene">krainboltgreene</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-18715035-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
